@@ -1,9 +1,10 @@
 import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import path from 'path';
 
-// https://vite.dev/config/
 export default ({ mode }: any) => {
   console.log('mode', loadEnv(mode, process.cwd()));
   return defineConfig({
@@ -12,11 +13,15 @@ export default ({ mode }: any) => {
       vue(),
       AutoImport({
         imports: ['vue', 'vue-router', 'pinia'],
+        resolvers: [ElementPlusResolver()],
         eslintrc: {
           enabled: false,
           filepath: './.eslintrc-auto-import.json',
           globalsPropValue: true,
         },
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()],
       }),
     ],
     resolve: {
@@ -56,7 +61,7 @@ export default ({ mode }: any) => {
         treeshake: true,
         output: {
           manualChunks: {
-            vue: ['vue', 'pinia', 'vue-router'],
+            vue: ['vue', 'pinia', 'vue-router', 'element-plus'],
             elementIcons: ['@element-plus/icons-vue'],
           },
           chunkFileNames: 'static/js/[name]-[hash].js',

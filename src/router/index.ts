@@ -1,5 +1,5 @@
-import { createRouter } from "vue-router";
-import routes from "./routes";
+import { createRouter } from 'vue-router';
+import routes from './routes';
 
 const router = createRouter({
   history: import.meta.env.VITE_BASE_URL,
@@ -8,9 +8,9 @@ const router = createRouter({
     if (savedPosition) {
       return savedPosition;
     } else {
-      return { top: 0, behavior: "smooth" };
+      return { top: 0, behavior: 'smooth' };
     }
-  }
+  },
 });
 
 router.beforeEach(async (_to, _from, next) => {

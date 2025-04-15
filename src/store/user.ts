@@ -1,11 +1,11 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-const userStore = defineStore("user", {
+const userStore = defineStore('user', {
   state: () => ({}),
   getters: {},
   actions: {},
   persist: {
-    key: "user",
+    key: 'user',
     storage: sessionStorage,
     pick: undefined,
     omit: undefined,
@@ -14,8 +14,8 @@ const userStore = defineStore("user", {
     },
     afterHydrate: (ctx) => {
       console.log(ctx);
-    }
-  }
+    },
+  },
 });
 
 export default userStore;

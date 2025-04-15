@@ -1,7 +1,5 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div>1234</div>
+  <div class="">123</div>
 </template>
-
-<style scoped></style>
+<script setup lang="ts"></script>
+<style lang="less" scoped></style>

@@ -1,12 +1,12 @@
-import type { AxiosInstance, AxiosRequestConfig } from "axios";
-import axios from "axios";
+import type { AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 
 class Axios {
   instance: AxiosInstance;
   baseConfig: AxiosRequestConfig = {
     baseURL: import.meta.env.VITE_BASE_URL,
     withCredentials: true,
-    timeout: 10000
+    timeout: 10000,
   };
 
   constructor() {
@@ -17,7 +17,7 @@ class Axios {
       },
       (error) => {
         return Promise.reject(error);
-      }
+      },
     );
     this.instance.interceptors.response.use(
       (response) => {
@@ -25,7 +25,7 @@ class Axios {
       },
       (error) => {
         return Promise.reject(error);
-      }
+      },
     );
   }
 

@@ -1,7 +1,7 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import App from './App.vue';
 // import router from "./router";
 
 const app = createApp(App);
@@ -10,4 +10,4 @@ store.use(piniaPluginPersistedstate);
 
 app.use(store);
 // app.use(router);
-app.mount("#app");
+app.mount('#app');
